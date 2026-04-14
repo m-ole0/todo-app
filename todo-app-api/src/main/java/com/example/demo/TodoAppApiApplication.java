@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TodoAppApiApplication {
 
 	public static void main(String[] args) {
-		System.out.println("起動確認");
 		SpringApplication.run(TodoAppApiApplication.class, args);
 	}
 
