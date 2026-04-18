@@ -1,0 +1,27 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.repository.mapper.tasks.TaskCustomMapper">
+
+    <select id="findTasksByUserId" resultType="com.example.demo.dto.TaskIndexDto">
+        SELECT
+		    t.task_id AS taskId
+		    , t.title AS title
+		    , t.description AS description
+		    , t.due_date AS dueDate
+		    , tg.genre_name AS genreName
+		    , ts.status_name AS statusName
+		    , t.updated_at  AS updatedAt
+		FROM
+		    tasks AS t 
+		    INNER JOIN task_genres AS TG
+		        ON tg.task_genre_id = t.genre_id 
+		    INNER JOIN task_status AS TS 
+		        ON ts.task_status_id = t.status_id
+		WHERE
+		    t.user_id = #{userId}
+
+    </select>
+
+</mapper>
