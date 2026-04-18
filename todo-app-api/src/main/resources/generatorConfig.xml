@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<properties resource="generator.properties"/>
+
+
+    <context id="users" targetRuntime="MyBatis3">
+    
+    	<jdbcConnection
+            driverClass="${jdbc.driver}"
+            connectionURL="${jdbc.url}"
+            userId="${jdbc.user}"
+            password="${jdbc.password}"/>
+
+        <javaModelGenerator 
+        	targetPackage="com.example.demo.entity.users"
+            targetProject="src/main/java"/>
+
+        <sqlMapGenerator
+            targetPackage="com.example.demo.repository.mapper.users"
+		    targetProject="src/main/resources"/>
+		    
+        <javaClientGenerator
+		    type="XMLMAPPER"
+		    targetPackage="com.example.demo.repository.mapper.users"
+		    targetProject="src/main/java"/>
+
+        <table tableName="users" domainObjectName="User"/>
+
+    </context>
+    
+    <context id="tasks" targetRuntime="MyBatis3">
+    
+    	<jdbcConnection
+            driverClass="${jdbc.driver}"
+            connectionURL="${jdbc.url}"
+            userId="${jdbc.user}"
+            password="${jdbc.password}"/>
+
+        <javaModelGenerator 
+        	targetPackage="com.example.demo.entity.tasks"
+            targetProject="src/main/java"/>
+
+        <sqlMapGenerator
+            targetPackage="com.example.demo.repository.mapper.tasks"
+		    targetProject="src/main/resources"/>
+		    
+        <javaClientGenerator
+		    type="XMLMAPPER"
+		    targetPackage="com.example.demo.repository.mapper.tasks"
+		    targetProject="src/main/java"/>
+
+        <table tableName="tasks" domainObjectName="Task"/>
+
+    </context>
+    
+     <context id="task_genres" targetRuntime="MyBatis3">
+    
+    	<jdbcConnection
+            driverClass="${jdbc.driver}"
+            connectionURL="${jdbc.url}"
+            userId="${jdbc.user}"
+            password="${jdbc.password}"/>
+
+        <javaModelGenerator 
+        	targetPackage="com.example.demo.entity.task_genres"
+            targetProject="src/main/java"/>
+
+        <sqlMapGenerator
+            targetPackage="com.example.demo.repository.mapper.task_genres"
+		    targetProject="src/main/resources"/>
+		    
+        <javaClientGenerator
+		    type="XMLMAPPER"
+		    targetPackage="com.example.demo.repository.mapper.task_genres"
+		    targetProject="src/main/java"/>
+
+        <table tableName="task_genres" domainObjectName="TaskGenre"/>
+
+    </context>
+    
+     <context id="task_status" targetRuntime="MyBatis3">
+    
+    	<jdbcConnection
+            driverClass="${jdbc.driver}"
+            connectionURL="${jdbc.url}"
+            userId="${jdbc.user}"
+            password="${jdbc.password}"/>
+
+        <javaModelGenerator 
+        	targetPackage="com.example.demo.entity.task_status"
+            targetProject="src/main/java"/>
+
+        <sqlMapGenerator
+            targetPackage="com.example.demo.repository.mapper.task_status"
+		    targetProject="src/main/resources"/>
+		    
+        <javaClientGenerator
+		    type="XMLMAPPER"
+		    targetPackage="com.example.demo.repository.mapper.task_status"
+		    targetProject="src/main/java"/>
+
+        <table tableName="task_status" domainObjectName="TaskStatus"/>
+
+    </context>
+</generatorConfiguration>
